@@ -1,4 +1,4 @@
-package es.uem.todo;
+package es.uem.todo.model;
 
 import java.io.Serializable;
 
@@ -7,18 +7,24 @@ import java.io.Serializable;
  */
 public class Task implements Serializable {
 
+    private int id;
     private String nombre;
     private String fecha;
     private int prioridad;
 
-    public Task(int prioridad, String nombre, String fecha) {
-        this.prioridad = prioridad;
+    public Task(int id, int prioridad, String nombre, String fecha ) {
+        this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;
+        this.prioridad = prioridad;
+    }
+
+    public Task(int prioridad, String nombre, String fecha) {
+        this(-1, prioridad,nombre, fecha);
     }
 
     public Task(){
-        this(0,"","");
+        this(-1,0,"","");
     }
 
     public String getNombre() {
@@ -44,6 +50,15 @@ public class Task implements Serializable {
     public void setPrioridad(int prioridad) {
         this.prioridad = prioridad;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     @Override
     public String toString(){

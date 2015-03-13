@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RatingBar;
 
+import es.uem.todo.model.Task;
+
 
 public class AddTask extends Activity {
 
